@@ -94,6 +94,34 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="Dp7-oa-BHx">
+                                        <rect key="frame" x="0.0" y="379" width="414" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dp7-oa-BHx" id="iBn-j1-UTh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYv-nI-Bv1">
+                                                    <rect key="frame" x="28" y="17.5" width="138" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbc-SK-bjY">
+                                                    <rect key="frame" x="330.5" y="17.5" width="55.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YYv-nI-Bv1" firstAttribute="centerY" secondItem="iBn-j1-UTh" secondAttribute="centerY" id="6h3-79-vNs"/>
+                                                <constraint firstItem="YYv-nI-Bv1" firstAttribute="leading" secondItem="iBn-j1-UTh" secondAttribute="leadingMargin" constant="8" id="ARq-k8-eIK"/>
+                                                <constraint firstItem="Rbc-SK-bjY" firstAttribute="centerY" secondItem="iBn-j1-UTh" secondAttribute="centerY" id="Z6b-M2-zkY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Rbc-SK-bjY" secondAttribute="trailing" constant="8" id="eqD-u5-nTL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>

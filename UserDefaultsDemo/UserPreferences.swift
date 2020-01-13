@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Activity: String {
   case run = "run"
@@ -18,9 +19,17 @@ enum UnitMeasurement: String {
   case kilometers = "Kiolometers"
 }
 
+
+enum Background: String {
+  case white = "White"
+  case blue = "Blue"
+  case orange = "Orange"
+}
+
 struct UserPreferenceKey {
   static let unitMeasurement = "Unit Measurement"
   static let activity = "Activity"
+  static let backgroundColor = "Background Color"
 }
 
 class UserPreference {
@@ -65,6 +74,17 @@ class UserPreference {
       return nil
     }
     return Activity(rawValue: activity)
+  }
+  
+  func getBackgroundColor() -> Background? {
+    guard let backgroundColor = UserDefaults.standard.object(forKey: UserPreferenceKey.backgroundColor) as? String else {
+      return nil
+    }
+    return Background(rawValue: backgroundColor)
+  }
+
+  func updateBackgroundColor(with color: Background) {
+    UserDefaults.standard.set(color.rawValue, forKey: UserPreferenceKey.backgroundColor)
   }
   
   

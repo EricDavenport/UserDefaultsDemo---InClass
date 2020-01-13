@@ -35,10 +35,30 @@ class SettingsViewController: UITableViewController {
     }
   }
   
+  var backgroundColor = Background.orange {
+    didSet {
+      updateBKGD()
+      
+      UserPreference.shared.updateBackgroundColor(with: backgroundColor)
+    }
+  }
+  
+  private func updateBKGD() {
+    switch backgroundColor {
+    case .orange:
+      view.backgroundColor = .orange
+    case .blue:
+      view.backgroundColor = .blue
+    default:
+      view.backgroundColor = .purple
+    }
+  }
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     updateUI()
+    
   }
   
   private func updateUI() {
@@ -50,10 +70,18 @@ class SettingsViewController: UITableViewController {
     if let activity = UserPreference.shared.getActivity() {
       currentPhoto = activity
     }
+    
+    if let color = UserPreference.shared.getBackgroundColor() {
+      backgroundColor = color
+    } else {
+      print("nil color")
+    }
   }
   
+  
+  
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-   
+    
     // toggle between "Miles" and "Kilometers"
     switch indexPath.row {
     case 0:
@@ -61,6 +89,8 @@ class SettingsViewController: UITableViewController {
       toggleUnitMeasurement()
     case 1:
       toggleBikeRunPhoto()
+    case 2:
+      toggleBackgroundColor()
     default:
       break
     }
@@ -72,5 +102,9 @@ class SettingsViewController: UITableViewController {
   
   private func toggleBikeRunPhoto() {
     currentPhoto = (currentPhoto == Activity.bike) ? Activity.run : Activity.bike
+  }
+  
+  private func toggleBackgroundColor() {
+    backgroundColor = (backgroundColor == Background.blue) ? Background.orange : Background.blue
   }
 }
